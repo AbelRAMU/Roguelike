@@ -247,7 +247,7 @@ sources/0 = SubResource("TileSetAtlasSource_4o5te")
 
 [node name="Abelito" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(82, 40)
+position = Vector2(143, 37)
 sprite_frames = SubResource("SpriteFrames_w2w4j")
 animation = &"Walk"
 
