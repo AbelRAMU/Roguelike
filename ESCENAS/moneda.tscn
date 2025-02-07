@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw1w55kucf1wh"]
+[gd_scene load_steps=18 format=3 uid="uid://cw1w55kucf1wh"]
 
+[ext_resource type="Script" path="res://ESCENAS/moneda.gd" id="1_0fp3k"]
 [ext_resource type="Texture2D" uid="uid://bu1ipi26ng4eb" path="res://img/tilesets/Coin Sheet.png" id="1_ady5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1i7um"]
@@ -99,21 +100,30 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d3orl"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnvqe"]
+radius = 6.32456
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ndbbk"]
-radius = 8.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8k0nl"]
+radius = 7.80256
 
-[node name="Moneda" type="Node2D"]
+[node name="monedas" type="StaticBody2D" groups=["monedas"]]
+position = Vector2(113, 37)
+scale = Vector2(5, 5)
+script = ExtResource("1_0fp3k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_474uu")
 animation = &"CoinSpin"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
-physics_material_override = SubResource("PhysicsMaterial_d3orl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_ndbbk")
+shape = SubResource("CircleShape2D_gnvqe")
+
+[node name="Area2D" type="Area2D" parent="." groups=["monedas"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_8k0nl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

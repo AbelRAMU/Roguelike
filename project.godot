@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="AbelitoRunner"
+run/main_scene="res://ESCENAS/mundo.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -20,6 +21,13 @@ folder_colors={
 "res://CODIGOS/": "yellow",
 "res://ESCENAS/": "green"
 }
+
+[global_group]
+
+enemigos="te matan w"
+jugadores="juegas con ellos w"
+monedas="te dan lana"
+obstaculos="también te matan"
 
 [rendering]
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ny4gn1os5wy"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ny4gn1os5wy"]
 
 [ext_resource type="PackedScene" uid="uid://blfaaxxwfj1vi" path="res://ESCENAS/Abelito.tscn" id="1_qqpat"]
+[ext_resource type="PackedScene" uid="uid://3hwg6hi7fm3a" path="res://ESCENAS/Enemigo.tscn" id="2_t6jcn"]
+[ext_resource type="PackedScene" uid="uid://cw1w55kucf1wh" path="res://ESCENAS/moneda.tscn" id="3_rw2h0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmua"]
 size = Vector2(1151.5, 81.5)
@@ -16,3 +18,13 @@ shape = SubResource("RectangleShape2D_ddmua")
 [node name="jugador" type="Node" parent="."]
 
 [node name="jugador" parent="jugador" instance=ExtResource("1_qqpat")]
+
+[node name="enemigos" type="Node" parent="."]
+
+[node name="Enemigo" parent="enemigos" instance=ExtResource("2_t6jcn")]
+position = Vector2(1017, 165)
+
+[node name="monedas" type="Node" parent="."]
+
+[node name="monedas" parent="monedas" instance=ExtResource("3_rw2h0")]
+position = Vector2(455, 362)
