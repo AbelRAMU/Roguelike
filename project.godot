@@ -10,25 +10,37 @@ config_version=5
 
 [application]
 
-config/name="AbelitoRunner"
-run/main_scene="res://ESCENAS/mundo.tscn"
+config/name="AbelitoPlataformero2D"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=426
+window/size/viewport_height=240
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
 
 [file_customization]
 
 folder_colors={
-"res://CODIGOS/": "yellow",
-"res://ESCENAS/": "green"
+"res://ESCENAS/": "green",
+"res://SCRIPTS/": "yellow"
 }
 
 [global_group]
 
-enemigos="te matan w"
-jugadores="juegas con ellos w"
-monedas="te dan lana"
-obstaculos="también te matan"
+jugadores=""
+monedas=""
+enemigos=""
+obstaculos=""
+
+[input_devices]
+
+pointing/stretch/mode="canvas_items"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
