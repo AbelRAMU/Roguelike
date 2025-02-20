@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tarjeta de cumpleaños infantil colorida.png-2632f73a8dfbf936fb7007703af11129.stex"
+path="res://.import/Armario pt2.png-2fbf9e4de69221d13d3894b25ddfb42f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://conceptos/Tarjeta de cumpleaños infantil colorida.png"
-dest_files=[ "res://.import/Tarjeta de cumpleaños infantil colorida.png-2632f73a8dfbf936fb7007703af11129.stex" ]
+source_file="res://conceptos/Armario pt2.png"
+dest_files=[ "res://.import/Armario pt2.png-2fbf9e4de69221d13d3894b25ddfb42f.stex" ]
 
 [params]
 

@@ -1,5 +1,7 @@
 extends Jugador
 
+onready var sword: Node2D = get_node("Sword")
+
 func _process(_delta: float) -> void:
 	var mouse_direccion: Vector2 =(get_global_mouse_position() - global_position).normalized()
 	
@@ -8,7 +10,12 @@ func _process(_delta: float) -> void:
 		
 	elif mouse_direccion.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true 
-
+		
+	sword.rotation = mouse_direccion.angle()
+	if sword.scale.y == 1 and mouse_direccion.x < 0:
+		sword.scale.y = -1
+	elif sword.scale.y == -1 and mouse_direccion.x > 0:
+		sword.scale.y = 1
 func get_input() -> void:
 	
 	mov_direction = Vector2.ZERO
