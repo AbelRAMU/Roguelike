@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="AbelitoRoguelike"
+run/main_scene="res://JUGADOR/Player.tscn"
 config/icon="res://icon.png"
 
 [display]
