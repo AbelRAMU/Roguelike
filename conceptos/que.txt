@@ -1,0 +1,1 @@
+Poner en este directorio los conceptos de como se verán distintas pantallas del juego. Se borrara al final.
