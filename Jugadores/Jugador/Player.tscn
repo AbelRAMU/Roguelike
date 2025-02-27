@@ -128,6 +128,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node2D/Sprite/Hitbox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [sub_resource type="Animation" id=17]
 length = 0.6
@@ -221,6 +233,7 @@ script = ExtResource( 8 )
 position = Vector2( 4.94973, -3.53551 )
 rotation = 0.785398
 shape = SubResource( 15 )
+disabled = true
 
 [node name="SlashSprite" type="Sprite" parent="Sword" index="1"]
 visible = false
