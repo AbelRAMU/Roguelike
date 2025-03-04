@@ -64,5 +64,16 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="FlyingCreature" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276.967, 33.6739 )
+accerelation = 20
+max_speed = 50
+
+[node name="FlyingCreature3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 274.03, 204.08 )
+accerelation = 20
+max_speed = 50
+
+[node name="FlyingCreature2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 444.729, 84.0392 )
 accerelation = 20
 max_speed = 50
