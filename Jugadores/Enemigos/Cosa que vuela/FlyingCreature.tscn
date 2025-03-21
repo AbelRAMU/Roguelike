@@ -209,6 +209,7 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 9 )
+animation = "dead"
 frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
@@ -223,6 +224,7 @@ script = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, 0.972272 )
 shape = SubResource( 11 )
+disabled = true
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/dead = SubResource( 12 )
