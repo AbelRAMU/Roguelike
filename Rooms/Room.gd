@@ -38,7 +38,7 @@ func _close_entrance() -> void:
 		
 func _spawn_enemies() -> void:
 	for enemy_position in enemy_positions_container.get_children():
-		var enemy: KinematicBody2D = ENEMY_SCENES.FLYING_CREATURE.instance()
+		var enemy: KinematicBody2D = ENEMY_SCENES.FLYNG_CREATURE.instance()
 		var __ = enemy.connect("tree_exited", self, "_on_enemy_killed")
 		enemy.global_position = enemy_position.global_position
 		call_deferred("add_child", enemy)
