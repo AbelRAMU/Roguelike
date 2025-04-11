@@ -28,10 +28,11 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="UI/HealthBar"]
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
 [node name="Rooms" type="Node2D" parent="."]
 
 [node name="Room0" parent="Rooms" instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 161.145, 220.236 )
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]

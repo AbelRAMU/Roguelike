@@ -32,8 +32,8 @@ func _open_doors() -> void:
 		
 func _close_entrance() -> void:
 	for entry_position in entrance.get_children():
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.global_position), 1)
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.global_position) + Vector2.UP, 2)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 1)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 2)
 		
 		
 func _spawn_enemies() -> void:
@@ -44,12 +44,12 @@ func _spawn_enemies() -> void:
 		call_deferred("add_child", enemy)
 		
 		var spawn_explosion: AnimatedSprite = SPAWN_EXPLOSION_SCENE.instance()
-		spawn_explosion.global_position = enemy_position.global_position
+		spawn_explosion.position = enemy_position.position
 		call_deferred("add_child", spawn_explosion)
 
 
 
-func _on_PlayerDetector_body_entered(body: KinematicBody2D) -> void:
+func _on_PlayerDetector_body_entered(_body: KinematicBody2D) -> void:
 	player_detector.queue_free()
 	_close_entrance()
 	_spawn_enemies()
