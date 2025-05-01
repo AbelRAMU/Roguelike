@@ -1,12 +1,12 @@
 extends Node2D
 
-const SPAWN_EXPLOSION_SCENE: PackedScene = preload("res://Jugadores/Enemigos/SpawnExplosion.tscn")
+const SPAWN_EXPLOSION_SCENE: PackedScene = preload("res://Characters/Enemies/SpawnExplosion.tscn")
 
 const ENEMY_SCENES: Dictionary = {
-	"FLYNG_CREATURE": preload("res://Jugadores/Enemigos/Cosa que vuela/FlyingCreature.tscn")
+	"FLYING_CREATURE": preload("res://Characters/Enemies/Flying Creature/FlyingCreature.tscn")
 }
 
-var num_enemies: int 
+var num_enemies: int
 
 onready var tilemap: TileMap = get_node("Navigation2D/TileMap2")
 onready var entrance: Node2D = get_node("Entrance")
@@ -38,9 +38,9 @@ func _close_entrance() -> void:
 		
 func _spawn_enemies() -> void:
 	for enemy_position in enemy_positions_container.get_children():
-		var enemy: KinematicBody2D = ENEMY_SCENES.FLYNG_CREATURE.instance()
+		var enemy: KinematicBody2D = ENEMY_SCENES.FLYING_CREATURE.instance()
 		var __ = enemy.connect("tree_exited", self, "_on_enemy_killed")
-		enemy.global_position = enemy_position.global_position
+		enemy.position = enemy_position.position
 		call_deferred("add_child", enemy)
 		
 		var spawn_explosion: AnimatedSprite = SPAWN_EXPLOSION_SCENE.instance()

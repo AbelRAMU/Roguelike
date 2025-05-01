@@ -12,25 +12,25 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://Jugadores/Character.gd"
+"path": "res://Characters/Character.gd"
 }, {
 "base": "Character",
 "class": "Enemy",
 "language": "GDScript",
-"path": "res://Jugadores/Enemigos/Enemy.gd"
+"path": "res://Characters/Enemies/Enemy.gd"
 }, {
 "base": "Node",
 "class": "FiniteStateMachine",
 "language": "GDScript",
-"path": "res://Jugadores/FSM.gd"
+"path": "res://Characters/FSM.gd"
 }, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://Jugadores/Hitbox.gd"
+"path": "res://Characters/Hitbox.gd"
 } ]
 _global_script_class_icons={
-"Character": "res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png",
+"Character": "",
 "Enemy": "res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/goblin/goblin_idle_anim_f0.png",
 "FiniteStateMachine": "",
 "Hitbox": ""
@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Roguelike Tutorial"
-run/main_scene="res://Juego.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [display]

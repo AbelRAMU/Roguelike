@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Jugadores/Enemigos/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_spritesheet.png" type="Texture" id=2]
-[ext_resource path="res://Jugadores/Enemigos/Cosa que vuela/FlyingCreatureFSM.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Enemies/Flying Creature/FlyingCreatureFSM.gd" type="Script" id=3]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=4]
-[ext_resource path="res://Jugadores/Hitbox.gd" type="Script" id=5]
-[ext_resource path="res://Jugadores/Enemigos/Cosa que vuela/FlyingCreature.gd" type="Script" id=6]
+[ext_resource path="res://Characters/Hitbox.gd" type="Script" id=5]
+[ext_resource path="res://Characters/Enemies/Flying Creature/FlyingCreature.gd" type="Script" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -56,10 +56,9 @@ animations = [ {
 radius = 3.16228
 
 [sub_resource type="CircleShape2D" id=11]
-radius = 4.54935
+radius = 6.70593
 
 [sub_resource type="Animation" id=12]
-resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -195,10 +194,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 
 [node name="FlyingCreature" instance=ExtResource( 1 )]
@@ -211,7 +210,6 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 9 )
-animation = "dead"
 frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
@@ -224,9 +222,8 @@ collision_mask = 2
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0, 0.972272 )
+position = Vector2( 0.167044, 1 )
 shape = SubResource( 11 )
-disabled = true
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/dead = SubResource( 12 )

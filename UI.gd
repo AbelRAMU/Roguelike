@@ -8,6 +8,7 @@ onready var player: KinematicBody2D = get_parent().get_node("Player")
 onready var health_bar: TextureProgress = get_node("HealthBar")
 onready var health_bar_tween: Tween = get_node("HealthBar/Tween")
 
+
 func _ready() -> void:
 	max_hp = player.hp
 	_update_health_bar(100)
