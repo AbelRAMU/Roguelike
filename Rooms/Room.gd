@@ -51,5 +51,8 @@ func _spawn_enemies() -> void:
 
 func _on_PlayerDetector_body_entered(_body: KinematicBody2D) -> void:
 	player_detector.queue_free()
-	_close_entrance()
-	_spawn_enemies()
+	if num_enemies > 0:
+		_close_entrance()
+		_spawn_enemies()
+	else:
+		_open_doors()
