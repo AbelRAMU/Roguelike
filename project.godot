@@ -30,7 +30,7 @@ _global_script_classes=[ {
 "path": "res://Characters/Hitbox.gd"
 } ]
 _global_script_class_icons={
-"Character": "res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png",
+"Character": "",
 "Enemy": "res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/goblin/goblin_idle_anim_f0.png",
 "FiniteStateMachine": "",
 "Hitbox": ""
