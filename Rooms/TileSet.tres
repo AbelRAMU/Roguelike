@@ -17,8 +17,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
-[sub_resource type="NavigationPolygon" id=6]
-vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+[sub_resource type="NavigationPolygon" id=30]
+vertices = PoolVector2Array( 16, 7.83864, 0, 5.88507, 0, 0, 16, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="NavigationPolygon" id=7]
@@ -359,7 +359,7 @@ points = PoolVector2Array( 0, 11.6406, 16, 11.8344, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0
-14/name = "full tilemap.png 14"
+14/name = "floor with half navigation"
 14/texture = ExtResource( 1 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
@@ -367,7 +367,7 @@ points = PoolVector2Array( 0, 11.6406, 16, 11.8344, 16, 16, 0, 16 )
 14/tile_mode = 0
 14/occluder_offset = Vector2( 0, 0 )
 14/navigation_offset = Vector2( 0, 0 )
-14/navigation = SubResource( 6 )
+14/navigation = SubResource( 30 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 14/shape_one_way = false
