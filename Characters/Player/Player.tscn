@@ -7,7 +7,7 @@
 [ext_resource path="res://Characters/Player/PlayerFSM.gd" type="Script" id=5]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/weapon_sword_1.png" type="Texture" id=6]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://Characters/Hitbox.gd" type="Script" id=8]
+[ext_resource path="res://Characters/Player/SwordHitbox.gd" type="Script" id=8]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -35,44 +35,44 @@ atlas = ExtResource( 2 )
 region = Rect2( 80, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 64, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 80, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 16, 16 )
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 3 )
-region = Rect2( 48, 0, 16, 16 )
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 16, 16 )
+atlas = ExtResource( 9 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 3 )
-region = Rect2( 80, 0, 16, 16 )
+atlas = ExtResource( 9 )
+region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
@@ -81,14 +81,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "move",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
@@ -252,7 +252,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=24]
 resource_name = "charge"
 length = 1.2
 step = 0.2
@@ -269,7 +269,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=25]
 resource_name = "circular_attack"
 length = 2.0
 step = 0.2
@@ -322,7 +322,7 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=26]
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -377,7 +377,7 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=27]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -416,7 +416,7 @@ tracks/2/keys = {
 "values": [ false, true, false, true ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=28]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -444,7 +444,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=29]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -503,7 +503,7 @@ offset = Vector2( 5, -4 )
 
 [node name="Hitbox" type="Area2D" parent="Sword/Node2D/Sprite" index="0"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword/Node2D/Sprite/Hitbox" index="0"]
@@ -528,14 +528,16 @@ hframes = 3
 [node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="2"]
 anims/attack = SubResource( 22 )
 anims/cancel_attack = SubResource( 23 )
-anims/charge = SubResource( 28 )
-anims/circular_attack = SubResource( 29 )
+anims/charge = SubResource( 24 )
+anims/circular_attack = SubResource( 25 )
 
 [node name="AnimationPlayer" parent="." index="4"]
-anims/dead = SubResource( 24 )
-anims/hurt = SubResource( 25 )
-anims/idle = SubResource( 26 )
-anims/move = SubResource( 27 )
+anims/dead = SubResource( 26 )
+anims/hurt = SubResource( 27 )
+anims/idle = SubResource( 28 )
+anims/move = SubResource( 29 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 current = true
+
+[connection signal="area_entered" from="Sword/Node2D/Sprite/Hitbox" to="Sword/Node2D/Sprite/Hitbox" method="_on_Hitbox_area_entered"]
