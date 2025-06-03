@@ -75,7 +75,7 @@ region = Rect2( 48, 0, 16, 16 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "Idle",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
@@ -90,7 +90,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=18]
-radius = 5.15388
+radius = 4.0
 
 [sub_resource type="Animation" id=19]
 resource_name = "dead"
@@ -104,7 +104,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ "Idle", "explosion" ]
+"values": [ "idle", "explosion" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:frame")
@@ -157,7 +157,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Idle" ]
+"values": [ "idle" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:frame")
@@ -169,7 +169,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 3 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSprite:visible")
@@ -185,7 +185,6 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=21]
-resource_name = "idle"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -198,7 +197,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Idle" ]
+"values": [ "idle" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:frame")
@@ -214,7 +213,6 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=22]
-resource_name = "move"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -256,7 +254,7 @@ animation = "explosion"
 frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( 2.125, 2.875 )
+position = Vector2( 1, 2 )
 shape = SubResource( 18 )
 
 [node name="AnimationPlayer" parent="." index="3"]

@@ -29,7 +29,7 @@ func move() -> void:
 	velocity = velocity.clamped(max_speed)
 	
 	
-func take_damage(dam: int, dir: Vector2, force: int) -> void: 
+func take_damage(dam: int, dir: Vector2, force: int) -> void:
 	if state_machine.state != state_machine.states.hurt and state_machine.state != state_machine.states.dead:
 		self.hp -= dam
 		if hp > 0:

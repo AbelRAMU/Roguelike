@@ -56,7 +56,7 @@ animations = [ {
 radius = 3.16228
 
 [sub_resource type="CircleShape2D" id=11]
-radius = 6.70593
+radius = 4.0
 
 [sub_resource type="Animation" id=12]
 tracks/0/type = "value"
@@ -223,7 +223,7 @@ collision_mask = 2
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 0.167044, 1 )
+position = Vector2( 0, 1 )
 shape = SubResource( 11 )
 
 [node name="AnimationPlayer" parent="." index="4"]

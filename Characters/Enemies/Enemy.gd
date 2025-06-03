@@ -35,4 +35,3 @@ func _on_PathTimer_timeout() -> void:
 		
 func _get_path_to_player() -> void:
 	path = navigation.get_simple_path(global_position, player.position)
-	

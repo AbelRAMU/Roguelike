@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spikes_spritesheet.png-3d802dad452bfb94f38d51271418be37.stex"
+path="res://.import/Hammer.png-907dd658a800adc15a4f1440d6266e5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/v1.1 dungeon crawler 16x16 pixel pack/tiles/floor/spikes_spritesheet.png"
-dest_files=[ "res://.import/spikes_spritesheet.png-3d802dad452bfb94f38d51271418be37.stex" ]
+source_file="res://Art/Hammer.png"
+dest_files=[ "res://.import/Hammer.png-907dd658a800adc15a4f1440d6266e5c.stex" ]
 
 [params]
 
