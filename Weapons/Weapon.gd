@@ -1,9 +1,12 @@
 extends Node2D
 class_name Weapon, "res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/weapon_sword_1.png"
 
+export(bool) var on_floor: bool = false
+
 onready var animation_player: AnimationPlayer = get_node("AnimationPlayer")
 onready var hitbox: Area2D = get_node("Node2D/Sprite/Hitbox")
 onready var charge_particles: Particles2D = get_node("Node2D/Sprite/ChargeParticles")
+onready var player_detector: Area2D = get_node("PlayerDetector")
 
 func get_input() -> void:
 	if Input.is_action_just_pressed("ui_attack") and not animation_player.is_playing():

@@ -289,7 +289,7 @@ position = Vector2( 18, 0 )
 texture = ExtResource( 2 )
 hframes = 3
 
-[node name="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" parent="." index="4"]
 anims/attack = SubResource( 2 )
 anims/cancel_attack = SubResource( 3 )
 anims/charge = SubResource( 4 )
