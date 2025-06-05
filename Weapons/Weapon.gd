@@ -8,6 +8,13 @@ onready var hitbox: Area2D = get_node("Node2D/Sprite/Hitbox")
 onready var charge_particles: Particles2D = get_node("Node2D/Sprite/ChargeParticles")
 onready var player_detector: Area2D = get_node("PlayerDetector")
 
+
+func _ready() -> void:
+	if not on_floor:
+		player_detector.set_collision_mask_bit(0, false)
+		player_detector.set_collision_mask_bit(1, false)
+
+
 func get_input() -> void:
 	if Input.is_action_just_pressed("ui_attack") and not animation_player.is_playing():
 		animation_player.play("charge")
@@ -36,3 +43,11 @@ func is_busy() -> bool:
 	if animation_player.is_playing() or charge_particles.emitting:
 		return true
 	return false
+
+
+func _on_PlayerDetector_body_entered(body):
+	if body != null:
+		player_detector.set_collision_mask_bit(0, false)
+		player_detector.set_collision_mask_bit(1, false)
+		body.pick_up_weapon(self)
+		position = Vector2.ZERO
