@@ -310,5 +310,8 @@ anims/cancel_attack = SubResource( 7 )
 anims/charge = SubResource( 8 )
 anims/strong_attack = SubResource( 9 )
 
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="area_entered" from="Node2D/Sprite/Hitbox" to="Node2D/Sprite/Hitbox" method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
