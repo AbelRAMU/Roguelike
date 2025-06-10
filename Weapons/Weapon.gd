@@ -46,7 +46,7 @@ func is_busy() -> bool:
 	return false
 
 
-func _on_PlayerDetector_body_entered(body):
+func _on_PlayerDetector_body_entered(body: KinematicBody2D) -> void:
 	if body != null:
 		player_detector.set_collision_mask_bit(0, false)
 		player_detector.set_collision_mask_bit(1, false)
