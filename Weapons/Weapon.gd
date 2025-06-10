@@ -66,5 +66,5 @@ func interpolate_pos(initial_pos: Vector2, final_pos: Vector2) -> void:
 	player_detector.set_collision_mask_bit(0, true)
 
 
-func _on_Tween_tween_completed_(object: Object, _key: NodePath) -> void:
+func _on_Tween_tween_completed(_object: Object, _key: NodePath) -> void:
 	player_detector.set_collision_mask_bit(1, true)
