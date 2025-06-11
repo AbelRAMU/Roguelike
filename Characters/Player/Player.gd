@@ -67,8 +67,8 @@ func pick_up_weapon(weapon: Node2D) -> void:
 	current_weapon.hide()
 	current_weapon.cancel_attack()
 	current_weapon = weapon
-		
-		
+	
+	
 func _drop_weapon() -> void:
 	var weapon_to_drop: Node2D = current_weapon
 	_switch_weapon(UP)
@@ -80,8 +80,8 @@ func _drop_weapon() -> void:
 	
 	var throw_dir: Vector2 = (get_global_mouse_position() - position).normalized()
 	weapon_to_drop.interpolate_pos(position, position + throw_dir * 50)
-	
-	
+		
+		
 func cancel_attack() -> void:
 	current_weapon.cancel_attack()
 		
