@@ -5,6 +5,7 @@ enum {UP, DOWN}
 var current_weapon: Node2D
 
 onready var weapons: Node2D = get_node("Weapons")
+onready var dust_position: Position2D = get_node("DustPosition")
 
 
 func _ready() -> void:
@@ -84,8 +85,11 @@ func _drop_weapon() -> void:
 		
 func cancel_attack() -> void:
 	current_weapon.cancel_attack()
-		
-		
+	
+	
+func spawn_dust() -> void:
+	
+	
 func switch_camera() -> void:
 	var main_scene_camera: Camera2D = get_parent().get_node("Camera2D")
 	main_scene_camera.position = position
