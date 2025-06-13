@@ -1,9 +1,12 @@
 extends Character
 
+const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
+
 enum {UP, DOWN}
 
 var current_weapon: Node2D
 
+onready var parent: Node2D = get_parent()
 onready var weapons: Node2D = get_node("Weapons")
 onready var dust_position: Position2D = get_node("DustPosition")
 
@@ -88,7 +91,9 @@ func cancel_attack() -> void:
 	
 	
 func spawn_dust() -> void:
-	
+	var dust: Sprite = DUST_SCENE.instance()
+	dust.position = dust_position.global_position
+	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 	
 func switch_camera() -> void:
 	var main_scene_camera: Camera2D = get_parent().get_node("Camera2D")
