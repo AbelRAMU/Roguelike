@@ -50,6 +50,6 @@ func set_hp(new_hp: int) -> void:
 	emit_signal("hp_changed", new_hp)
 	
 	
-func _spawn_hit_effect() -> void: 
+func _spawn_hit_effect() -> void:
 	var hit_effect: Sprite = HIT_EFFECT_SCENE.instance()
 	add_child(hit_effect)

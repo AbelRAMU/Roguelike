@@ -20,9 +20,9 @@ tile_data = PoolIntArray( 196619, 26, 0, 196620, 25, 0, 393222, 33, 0, 393225, 3
 [node name="Door" parent="Doors" index="0" instance=ExtResource( 2 )]
 position = Vector2( 80, 16 )
 
-[node name="PlayerSpawnPos" type="Position2D" parent="." index="7"]
-position = Vector2( 128, 144 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2( 80, 56 )
 shape = SubResource( 1 )
+
+[node name="PlayerSpawnPos" type="Position2D" parent="." index="7"]
+position = Vector2( 128, 144 )

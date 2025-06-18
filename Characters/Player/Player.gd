@@ -75,6 +75,7 @@ func _switch_weapon(direction: int) -> void:
 	current_weapon.show()
 	SavedData.equipped_weapon_index = index
 	
+	
 func pick_up_weapon(weapon: Node2D) -> void:
 	SavedData.weapons.append(weapon.duplicate())
 	SavedData.equipped_weapon_index = weapons.get_child_count()
@@ -108,7 +109,8 @@ func spawn_dust() -> void:
 	var dust: Sprite = DUST_SCENE.instance()
 	dust.position = dust_position.global_position
 	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
-	
+		
+		
 func switch_camera() -> void:
 	var main_scene_camera: Camera2D = get_parent().get_node("Camera2D")
 	main_scene_camera.position = position

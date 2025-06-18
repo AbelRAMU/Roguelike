@@ -289,4 +289,4 @@ visible = false
 current = true
 
 [node name="DustPosition" type="Position2D" parent="." index="6"]
-position = Vector2( -0.15749, 6.15749 )
+position = Vector2( 0, 6 )
